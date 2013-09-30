@@ -116,6 +116,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AutoComplete\HelpService.cs" />
+    <Compile Include="CodeIssues\CodeIssueProviders.cs" />
+    <Compile Include="CodeIssues\CodeIssuesHandler.cs" />
+    <Compile Include="CodeIssues\CodeIssuesModule.cs" />
+    <Compile Include="CodeIssues\GetCodeIssuesResponse.cs" />
+    <Compile Include="CodeIssues\RunCodeIssuesResponse.cs" />
     <Compile Include="Documentation\DocumentationFetcher.cs" />
     <Compile Include="Documentation\MonoDocDocumentationProvider.cs" />
     <Compile Include="Build\BuildCommandBuilder.cs" />
