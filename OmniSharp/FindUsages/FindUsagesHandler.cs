@@ -36,7 +36,7 @@ namespace OmniSharp.FindUsages
                             .OrderBy(n => n.GetRegion().FileName.LowerCaseDriveLetter())
                             .ThenBy(n => n.StartLocation.Line)
                             .ThenBy(n => n.StartLocation.Column);
-                            
+
             var res = new QuickFixResponse();
             if (result.Any())
             {
@@ -62,7 +62,7 @@ namespace OmniSharp.FindUsages
             {
                 FindCallsThroughInterface = true,
                 FindCallsThroughVirtualBaseMethod = true,
-                FindTypeReferencesEvenIfAliased = false,
+                FindTypeReferencesEvenIfAliased = true,
             };
 
             ResolveResult resolveResult = ResolveAtLocation.Resolve(res.Compilation, res.UnresolvedFile, res.SyntaxTree, loc);
@@ -133,8 +133,8 @@ namespace OmniSharp.FindUsages
 
         private void ProcessMemberResults(ResolveResult resolveResult)
         {
-            //TODO: why does FindReferencesInFile not return the definition for a field? 
-            // add it here instead for now. 
+            //TODO: why does FindReferencesInFile not return the definition for a field?
+            // add it here instead for now.
             var definition = resolveResult.GetDefinitionRegion();
             ProcessRegion(definition);
         }
