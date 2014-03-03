@@ -1,3 +1,11 @@
 ﻿{
-
+  "PathReplacements":[
+		
+  ],
+  UseCygpath: false,
+  TestCommands: {
+	All: "nunit-console.exe -nologo -labels {{AssemblyPath}}",
+	Fixture: "nunit-console.exe -nologo -labels {{AssemblyPath}} -run={{TypeName}}",
+	Single: "nunit-console.exe -nologo -labels {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
+  } 
 }
